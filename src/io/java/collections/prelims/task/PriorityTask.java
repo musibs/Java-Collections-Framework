@@ -5,7 +5,7 @@ public class PriorityTask implements Comparable<PriorityTask> {
     private final Priority priority;
     private final Task task;
 
-    protected PriorityTask(Priority priority, Task task){
+    public PriorityTask(Priority priority, Task task){
         this.priority = priority;
         this.task = task;
     }
@@ -33,5 +33,13 @@ public class PriorityTask implements Comparable<PriorityTask> {
     @Override
     public String toString() {
         return task +":"+priority;
+    }
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public Task getTask() {
+        return task;
     }
 }

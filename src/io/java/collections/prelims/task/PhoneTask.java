@@ -5,7 +5,7 @@ public class PhoneTask extends Task{
     private final String name;
     private final String number;
 
-    protected PhoneTask(String name, String number){
+    public PhoneTask(String name, String number){
         this.name = name;
         this.number = number;
     }
