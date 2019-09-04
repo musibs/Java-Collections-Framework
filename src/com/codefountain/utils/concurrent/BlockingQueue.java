@@ -1,4 +1,7 @@
-package com.codefountain.utils;
+package com.codefountain.utils.concurrent;
+
+import com.codefountain.utils.Collection;
+import com.codefountain.utils.Queue;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,11 +17,11 @@ public interface BlockingQueue<E> extends Queue<E> {
 
     boolean offer(E element, long timeout, TimeUnit unit) throws InterruptedException;
 
-    boolean put(E element);
+    void put(E element) throws InterruptedException;
 
     E take() throws InterruptedException;
 
-    E poll(long timeout, TimeUnit unit);
+    E poll(long timeout, TimeUnit unit) throws InterruptedException;
 
     int remainingCapacity();
 
