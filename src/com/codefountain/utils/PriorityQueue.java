@@ -12,7 +12,7 @@ import java.util.function.Consumer;
  * @author musib on 4/09/2019
  * @project java-collections
  */
-public class PriorityQueue<E> extends AbstractQueue<E> implements java.io.Serializable {
+public abstract class PriorityQueue<E> extends AbstractQueue<E> implements java.io.Serializable {
 
     private static final long serialVersionUID = -7720805057305804111L;
 
@@ -53,7 +53,7 @@ public class PriorityQueue<E> extends AbstractQueue<E> implements java.io.Serial
         else if(c instanceof PriorityQueue<?>){
             PriorityQueue<? extends E> pq = (PriorityQueue<? extends  E>) c;
             this.comparator = (Comparator<? super E>) pq.comparator();
-            initFromPriorityQueue();
+            //initFromPriorityQueue(c);
         }
         else {
             this.comparator = null;
@@ -106,7 +106,7 @@ public class PriorityQueue<E> extends AbstractQueue<E> implements java.io.Serial
 
     private void initFromCollection(Collection<? extends E> c){
         initElementsFromCollection(c);
-        heapify();
+        //heapify();
     }
 
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
