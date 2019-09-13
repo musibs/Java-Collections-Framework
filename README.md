@@ -1,2 +1,2 @@
-# Java-Collections-Framework
+# Java CollectionsFramework
 Java Collections Framework
